@@ -1,9 +1,9 @@
 module.exports = () => {
     const newsServices = {};
-    
-
-    return newsServices;
-}
+    const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+    var Httpreq = new XMLHttpRequest();
+    const fonts_api_url = require('../../config/default.json').Dubba.api_fonts_url;
+    var feedsArray = []
 
 newsServices.getFontsFromDubba = ()=>{   
     Httpreq.open("GET", fonts_api_url, false);
@@ -46,3 +46,7 @@ newsServices.getFeedByFonts = async () => {
 
     return feedsArray;
 };
+
+return newsServices;
+}
+
